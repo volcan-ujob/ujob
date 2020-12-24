@@ -6,12 +6,15 @@ import { LoginCmpComponent } from './login-cmp/login-cmp.component';
 import { LoginUserComponent } from './login-user/login-user.component';
 import { SigneUserComponent } from './signe-user/signe-user.component';
 import { SigneCmpComponent } from './signe-cmp/signe-cmp.component';
+import { FirstPageComponent } from './first-page/first-page.component';
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login-cmp', component: LoginCmpComponent },
   { path: 'login-user', component: LoginUserComponent },
-  { path: 'signe-user', component: SigneUserComponent },
-  { path: 'signe-cmp', component: SigneCmpComponent },
+  { path: 'sign-user', component: SigneUserComponent },
+  { path: 'sign-cmp', component: SigneCmpComponent },
+  { path: '', component: FirstPageComponent },
 ];
 
 @NgModule({
@@ -20,6 +23,7 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 export const routingComponents = [
+  FirstPageComponent,
   HomeComponent,
   LoginCmpComponent,
   LoginUserComponent,
