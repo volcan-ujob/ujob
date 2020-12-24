@@ -18,7 +18,7 @@ padding: 1rem;
 flex-direction: column;
 width: 100%;
 pointer-events: auto;
-background-color: #fff;
+background-color: #d7cccc;
 background-clip: padding-box;
 border: 1px solid rgba(0,0,0,.2);
 border-radius: 1.1rem;
@@ -46,7 +46,7 @@ max-width: 500px;
    left: 50%;
    top: -2px;
    margin-left: -25px;
-   background-color: #fff;
+   background-color: #d7cccc;
    width: 50px;
    text-align: center;
    }
@@ -67,7 +67,7 @@ max-width: 500px;
    color: #ff0000;
    }
    #second{display:none;}
-   
+
    .login:hover {
     color: #0d2d3e;
     border-color: #0d2d3e;
