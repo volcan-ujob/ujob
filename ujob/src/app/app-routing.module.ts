@@ -8,7 +8,7 @@ import { SigneUserComponent } from './signe-user/signe-user.component';
 import { SigneCmpComponent } from './signe-cmp/signe-cmp.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'login-com', component: LoginCmpComponent },
+  { path: 'login-cmp', component: LoginCmpComponent },
   { path: 'login-user', component: LoginUserComponent },
   { path: 'signe-user', component: SigneUserComponent },
   { path: 'signe-cmp', component: SigneCmpComponent },
