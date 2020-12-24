@@ -10,9 +10,10 @@ import { SigneUserComponent } from './signe-user/signe-user.component';
 import { SigneCmpComponent } from './signe-cmp/signe-cmp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageComponent } from './first-page/first-page.component';
+import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents, FirstPageComponent],
+  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
