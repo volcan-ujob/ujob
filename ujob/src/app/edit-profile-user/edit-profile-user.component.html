@@ -5,7 +5,6 @@
 />
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +22,7 @@
       integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
       crossorigin="anonymous"
     />
-    <!-- Bootstrap Core CSS -->
-    <!--     <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
     <link
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
       rel="stylesheet"
@@ -36,22 +34,100 @@
     <style>
       body {
         padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
       }
 
       .othertop {
         margin-top: 10px;
       }
     </style>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
   </head>
-
+  <header>
+    <!-- Header Start -->
+    <div class="header-area">
+      <div class="main-header">
+        <div class="header-top d-none d-lg-block">
+          <div class="container">
+            <div class="col-xl-12">
+              <div
+                class="row d-flex justify-content-between align-items-center"
+              >
+                <div class="header-info-left">
+                  <ul>
+                    <li>
+                      <i class="far fa-clock"></i> Mon - SAT: 6.00 am - 10.00 pm
+                    </li>
+                    <li>Sun: Closed</li>
+                  </ul>
+                </div>
+                <div class="header-info-right">
+                  <ul class="header-social">
+                    <li>
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="header-bottom header-sticky">
+          <div class="container">
+            <div class="row align-items-center">
+              <!-- Logo -->
+              <div class="col-xl-2 col-lg-2">
+                <div class="logo">
+                  <a href="index.html"
+                    ><img src="../../assets/assets/img/logo/logo222.png" alt=""
+                  /></a>
+                </div>
+              </div>
+              <div class="col-xl-10 col-lg-10">
+                <div
+                  class="menu-wrapper d-flex align-items-center justify-content-end"
+                >
+                  <!-- Main-menu -->
+                  <div class="main-menu d-none d-lg-block">
+                    <nav>
+                      <ul id="navigation">
+                        <li><a>HOME</a></li>
+                        <li><a routerLink="/myprofile-user">PROFILE</a></li>
+                        <li><a>EDIT PROFILE</a></li>
+                        <li>
+                          <a href="blog.html"></a>
+                          <ul class="submenu">
+                            <li><a href="blog.html"></a></li>
+                            <li>
+                              <a href="blog_details.html"></a>
+                            </li>
+                            <li><a href="elements.html"></a></li>
+                          </ul>
+                        </li>
+                        <li><a href="contact.html"></a></li>
+                      </ul>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+              <!-- Mobile Menu -->
+              <div class="col-12">
+                <div class="mobile_menu d-block d-lg-none"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+  </header>
   <body>
     <div class="container">
       <div class="row">
@@ -64,19 +140,40 @@
               <!-- Text input-->
 
               <div class="form-group">
-                <label class="col-md-4 control-label" for="Name (Full name)"
-                  >Name (Full name)</label
-                >
+                <label class="col-md-4 control-label" for="First Name"
+                  >First Name
+                </label>
+
                 <div class="col-md-4">
                   <div class="input-group">
                     <div class="input-group-addon">
                       <i class="fa fa-user"> </i>
                     </div>
                     <input
-                      id="Name (Full name)"
-                      name="Name (Full name)"
+                      id="First Name"
+                      name="First Name"
                       type="text"
-                      placeholder="Name (Full name)"
+                      placeholder="First Name"
+                      class="form-control input-md"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="Last Name"
+                  >Last Name
+                </label>
+
+                <div class="col-md-4">
+                  <div class="input-group">
+                    <div class="input-group-addon">
+                      <i class="fa fa-user"> </i>
+                    </div>
+                    <input
+                      id="Last Name"
+                      name="Last Name"
+                      type="text"
+                      placeholder="Last Name"
                       class="form-control input-md"
                     />
                   </div>
@@ -683,12 +780,6 @@ Overview</textarea
               </div>
             </fieldset>
           </form>
-        </div>
-        <div class="col-md-2 hidden-xs">
-          <img
-            src="http://websamplenow.com/30/userprofile/images/avatar.jpg"
-            class="img-responsive img-thumbnail"
-          />
         </div>
       </div>
     </div>
