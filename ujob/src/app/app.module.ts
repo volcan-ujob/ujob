@@ -11,9 +11,12 @@ import { SigneCmpComponent } from './signe-cmp/signe-cmp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
+import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
+import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent],
+  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent, ProfileUserComponent, MyProfilUserComponent, EditProfileUserComponent],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
