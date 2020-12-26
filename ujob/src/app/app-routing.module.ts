@@ -11,6 +11,7 @@ import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 import {MyProfilUserComponent} from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
+import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login-cmp', component: LoginCmpComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'profile-cmp', component: ProfileCmpComponent},
   { path: 'profile-user', component: ProfileUserComponent},
   { path: 'myprofile-user', component:MyProfilUserComponent},
-  { path : "edit-profile-user", component: EditProfileUserComponent}
+  { path : "edit-profile-user", component: EditProfileUserComponent},
+  {path : 'myprofile-cmp', component:MyProfilCmpComponent},
 ];
 
 @NgModule({
@@ -39,5 +41,6 @@ export const routingComponents = [
   ProfileCmpComponent,
   ProfileUserComponent,
   MyProfilUserComponent,
-  EditProfileUserComponent
+  EditProfileUserComponent,
+  MyProfilCmpComponent
 ];
