@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,7 +19,7 @@ import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
 
 @NgModule({
   declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent, ProfileUserComponent, MyProfilUserComponent, EditProfileUserComponent, MyProfilCmpComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
