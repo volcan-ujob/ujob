@@ -16,10 +16,13 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
+import { PaymeComponent } from './payme/payme.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent, ProfileUserComponent, MyProfilUserComponent, EditProfileUserComponent, MyProfilCmpComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule,HttpClientModule],
+
+  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent, ProfileUserComponent, MyProfilUserComponent, EditProfileUserComponent, MyProfilCmpComponent, PaymeComponent],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })
