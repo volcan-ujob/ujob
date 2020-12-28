@@ -15,10 +15,11 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TablePostsComponent } from './table-posts/table-posts.component';
 @NgModule({
-  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent, ProfileUserComponent, MyProfilUserComponent, EditProfileUserComponent, MyProfilCmpComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent, ProfileUserComponent, MyProfilUserComponent, EditProfileUserComponent, MyProfilCmpComponent, TablePostsComponent],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule,  HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

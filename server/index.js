@@ -1,16 +1,29 @@
 const express = require("express");
 const app = express();
-const port = 3000;
-var auth = require("./routers/auth");
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
+const PORT = process.env.PORT || 3000;
+
+const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
+
+var Post = require("../DB/models/companyPostModel");
+
+// Post= require('../../server/models/companyPostModel');
+
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost/Tododb", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 });
 
-app.listen(port, () => {
-  console.log(
-    `mongodb+srv://marwenkhorchani:marwen@cluster0.scqq4.mongodb.net/test:${port}`
-  );
-});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.use("auth", auth);
+var routePost = require("./routers/postCmpRouter");
+routePost(app);
+
+//require('./routers/postCmpRouter')(app);
+
+app.listen(PORT, () => {
+  console.log("todo list RESTful API server started on: " + PORT);
+});
