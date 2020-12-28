@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {HttpClientModule} from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,18 +12,56 @@ import { SigneCmpComponent } from './signe-cmp/signe-cmp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
+
+import { PaymeComponent } from './payme/payme.component';
+
+import { AuthService } from './auth.service';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
-import { PaymeComponent } from './payme/payme.component';
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    routingComponents,
+    FirstPageComponent,
+    ProfileCmpComponent,
+    ProfileUserComponent,
+    MyProfilUserComponent,
+    EditProfileUserComponent,
+    MyProfilCmpComponent,
+    PaymeComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    SocialLoginModule,
+  ],
+  providers: [
+    AuthService,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('clientId'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
 
-  declarations: [AppComponent, routingComponents, FirstPageComponent, ProfileCmpComponent, ProfileUserComponent, MyProfilUserComponent, EditProfileUserComponent, MyProfilCmpComponent, PaymeComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
-
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -122,8 +122,9 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">First Name</label>
                 <input
+                  [(ngModel)]="registerUserData.firstName"
                   type="name"
-                  name="First Name"
+                  name="firstName"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
@@ -133,8 +134,9 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Last Name</label>
                 <input
+                  [(ngModel)]="registerUserData.lastName"
                   type="name"
-                  name="email"
+                  name="lastName"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
@@ -144,8 +146,9 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input
+                  [(ngModel)]="registerUserData.username"
                   type="name"
-                  name="email"
+                  name="username"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
@@ -155,6 +158,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input
+                  [(ngModel)]="registerUserData.email"
                   type="email"
                   name="email"
                   class="form-control"
@@ -166,6 +170,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Password</label>
                 <input
+                  [(ngModel)]="registerUserData.password"
                   type="password"
                   name="password"
                   id="password"
@@ -174,16 +179,18 @@
                   placeholder="Enter Password"
                 />
               </div>
-              
+
               <div class="col-md-12 text-center">
                 <button
+                  (click)="registerUser()"
                   type="submit"
                   class="btn btn-block mybtn btn-primary tx-tfm login"
+                  routerLink="/login-user"
                 >
                   Sign Up
                 </button>
               </div>
-              
+
               <div class="col-md-12">
                 <div class="login-or">
                   <hr class="hr-or" />
@@ -197,7 +204,6 @@
                   </a>
                 </p>
               </div>
-
             </form>
           </div>
         </div>
