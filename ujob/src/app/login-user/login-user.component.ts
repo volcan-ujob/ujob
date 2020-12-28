@@ -29,8 +29,9 @@ export class LoginUserComponent implements OnInit {
     this._auth.loginUser(this.loginUserData).subscribe(
       (res: any) => {
         if (res.username !== null) {
+          localStorage.setItem('user', JSON.stringify(res));
           localStorage['login_status'] = '1';
-          this.router.navigate(['/home']);
+          this.router.navigate(['/prof-user']);
         }
       },
       (err: any) => console.log(err)

@@ -8,7 +8,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./my-profil-user.component.scss']
 })
 export class MyProfilUserComponent implements OnInit {
-  user : any 
+  user = JSON.parse(localStorage.getItem('user') || '{}');
   constructor(private _http: HttpClient) { }
 
   ngOnInit(): void {

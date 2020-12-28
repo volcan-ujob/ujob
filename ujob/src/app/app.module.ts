@@ -25,6 +25,7 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
+import { ProfUserComponent } from './prof-user/prof-user.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
     EditProfileUserComponent,
     MyProfilCmpComponent,
     PaymeComponent,
+    ProfUserComponent,
   ],
   imports: [
     BrowserModule,

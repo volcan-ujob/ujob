@@ -63,9 +63,10 @@
                     <nav>
                       <ul id="navigation">
                         <li><a>HOME</a></li>
-                        <li><a>PROFILE</a></li>
+                        <li><a routerLink="/prof-user"> MY PROFILE</a></li>
+                        <li><a routerLink="/myprofile-user"> MY RESUME</a></li>
                         <li>
-                          <a routerLink="/edit-profile-user">EDIT PROFILE</a>
+                          <a routerLink="/edit-profile-user">EDIT RESUME</a>
                         </li>
                         <li>
                           <a href="blog.html"></a>
@@ -104,7 +105,7 @@
               src="../../assets/assets/assets/images/profile.png"
               alt=""
             />
-            <h1 class="name">dthhrhrr</h1>
+            <h1 class="name">{{ user.username }}</h1>
             <h3 class="tagline">Full Stack Developer</h3>
           </div>
           <!--//profile-container-->
