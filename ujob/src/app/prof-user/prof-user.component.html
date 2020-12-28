@@ -203,7 +203,7 @@
           <!-- Profile -->
           <div class="w3-card w3-round w3-white">
             <div class="w3-container">
-              <h4 class="w3-center">{{ user.username }}</h4>
+              <h4 class="w3-center">{{ user.firstName }}{{" "}} {{ user.lastName }}</h4>
               <p class="w3-center">
                 <img
                   src="https://www.agl-serveis.com/wp-content/uploads/2019/03/20150805204041-google-company-building-corporate.jpeg"
@@ -214,8 +214,8 @@
               </p>
               <hr />
               <p>
-                <i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>
-                GOOGLE.com
+                <i class="fa fa-user fa-fw w3-margin-right w3-text-theme"></i>
+                {{user.username}}
               </p>
               <p>
                 <i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>
@@ -376,7 +376,7 @@
               style="width: 60px"
             />
             <span class="w3-right w3-opacity">1 min</span>
-            <h4>John Doe</h4>
+            <h4>{{user.username}}</h4>
             <br />
             <hr class="w3-clear" />
             <p>

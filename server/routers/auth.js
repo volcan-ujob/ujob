@@ -19,7 +19,6 @@ router.route("/login").post(function (req, res, next) {
   })(req, res, next);
 });
 
-
 router.route("/register").post(function (req, res) {
   userModel.findOne({ username: req.body.username }, async (err, doc) => {
     if (err) throw err;
@@ -32,7 +31,42 @@ router.route("/register").post(function (req, res) {
         lastName: req.body.lastName,
         email: req.body.email,
         username: req.body.username,
-        password: hashedPassword
+        password: hashedPassword,
+        job: "",
+        image: "",
+        phone: "",
+        webSite: "",
+        github: "",
+        twitter: "",
+        diploma: "",
+        School: "",
+        dateSc: "",
+        language1: "",
+        language2: "",
+        language3: "",
+        interest1: "",
+        interest2: "",
+        interest3: "",
+        careerProfile: "",
+        experienceJob1: "",
+        experiencePlace1: "",
+        experienceDate1: "",
+        experience1: "",
+        experienceJob2: "",
+        experiencePlace2: "",
+        experienceDate2: "",
+        experience2: "",
+        experienceJob3: "",
+        experiencePlace3: "",
+        experienceDate3: "",
+        experience3: "",
+        project1: "",
+        aboutProject1: "",
+        project2: "",
+        aboutProject2: "",
+        skill1: "",
+        skill2: "",
+        skill3: ""
       });
       await newUser.save();
       res.send("User Created");
@@ -49,4 +83,3 @@ router.route("/user").get(function (req, res) {
 });
 
 module.exports = router;
-

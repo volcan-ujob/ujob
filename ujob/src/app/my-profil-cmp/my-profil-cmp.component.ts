@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-profil-cmp.component.scss']
 })
 export class MyProfilCmpComponent implements OnInit {
-
+  user = JSON.parse(localStorage.getItem('user') || '{}');
   constructor() { }
 
   ngOnInit(): void {
