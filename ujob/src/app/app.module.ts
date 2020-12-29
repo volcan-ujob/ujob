@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
 import { PaymeComponent } from './payme/payme.component';
+
+
+
+
 import { AuthService } from './auth.service';
 import {
   SocialLoginModule,
@@ -22,8 +27,13 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
-import { HttpClientModule } from '@angular/common/http';
+
+import { ProfUserComponent } from './prof-user/prof-user.component';
+
+
+
 import { TablePostsComponent } from './table-posts/table-posts.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +44,17 @@ import { TablePostsComponent } from './table-posts/table-posts.component';
     MyProfilUserComponent,
     EditProfileUserComponent,
     MyProfilCmpComponent,
-    TablePostsComponent,
+
+
+    PaymeComponent,
+    ProfUserComponent,
+
     LoginCmpComponent,
     LoginUserComponent,
     SigneUserComponent,
     SigneCmpComponent,
+    TablePostsComponent
+
   ],
   imports: [
     BrowserModule,

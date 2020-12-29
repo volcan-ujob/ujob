@@ -1,6 +1,6 @@
-module.exports = function (app) {
-  var postCmpController = require("../../DB/controles/companyPostControle");
+var postCmpController = require("../../DB/controles/companyPostControle");
 
+module.exports = function (app) {
   app
     .route("/posts")
     .post(postCmpController.create_post)

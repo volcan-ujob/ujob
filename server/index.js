@@ -1,4 +1,5 @@
 const express = require("express");
+
 var bodyParser = require("body-parser");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -8,28 +9,22 @@ const db = require("../DB/index");
 
 const app = express();
 
-// const PORT = process.env.PORT || 3000;
-
 // const mongoose = require("mongoose");
-// const bodyParser = require("body-parser");
 
 // var Post = require("../DB/models/companyPostModel");
 
 // // Post= require('../../server/models/companyPostModel');
 
-// mongoose.Promise = global.Promise;
-// mongoose.connect("mongodb://localhost/Tododb", {
+// // mongoose.Promise = global.Promise;
+// mongoose.connect("marwenkhorchani:marwen@cluster0.scqq4.mongodb.net/ujob", {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true
 // });
 
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-
-// var routePost = require("./routers/postCmpRouter");
+// var routePost = require("./routers/postCmp");
 // routePost(app);
 
-// //require('./routers/postCmpRouter')(app);
+// require("./routers/postCmp")(app);
 
 // app.listen(PORT, () => {
 //   console.log("todo list RESTful API server started on: " + PORT);
@@ -38,6 +33,9 @@ const app = express();
 const port = 3000;
 var passport = require("passport");
 var auth = require("./routers/auth.js");
+
+var user = require("./routers/user");
+var post = require("./routers/postCmp");
 const cookieSession = require("cookie-session");
 
 app.use(express.json());
@@ -137,6 +135,8 @@ app.get(
     // res.redirect("/");
   }
 );
+
+app.use("/", user);
 
 app.listen(port, () => {
   console.log(`listening on ${port}`);
