@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <link
   href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   rel="stylesheet"
@@ -120,19 +120,21 @@
             </div>
             <form action="" method="post" name="login">
               <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
+                <label for="exampleInputEmail1">Name Of The Company</label>
                 <input
-                  type="email"
+                  [(ngModel)]="loginCompanyData.username"
+                  type="text"
                   name="email"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
-                  placeholder="Enter email"
+                  placeholder="Enter name of the company"
                 />
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Password</label>
                 <input
+                  [(ngModel)]="loginCompanyData.password"
                   type="password"
                   name="password"
                   id="password"
@@ -144,13 +146,14 @@
 
               <div class="col-md-12 text-center">
                 <button
+                  (click)="loginCompany()"
                   type="submit"
                   class="btn btn-block mybtn btn-primary tx-tfm login"
                 >
                   Login
                 </button>
               </div>
-              <br>
+              <br />
               <div class="col-md-12 text-center">
                 <button
                   type="submit"
