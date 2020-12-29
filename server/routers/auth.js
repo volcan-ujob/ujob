@@ -18,6 +18,7 @@ router.route("/login").post(function (req, res, next) {
     }
   })(req, res, next);
 });
+ 
 
 router.route("/register").post(function (req, res) {
   userModel.findOne({ username: req.body.username }, async (err, doc) => {

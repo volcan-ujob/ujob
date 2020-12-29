@@ -11,9 +11,7 @@ import { SigneCmpComponent } from './signe-cmp/signe-cmp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
-
 import { PaymeComponent } from './payme/payme.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import {
   SocialLoginModule,
@@ -24,7 +22,8 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TablePostsComponent } from './table-posts/table-posts.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,10 +34,11 @@ import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
     MyProfilUserComponent,
     EditProfileUserComponent,
     MyProfilCmpComponent,
+    TablePostsComponent,
     LoginCmpComponent,
     LoginUserComponent,
     SigneUserComponent,
-    SigneCmpComponent
+    SigneCmpComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +63,6 @@ import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
       } as SocialAuthServiceConfig,
     },
   ],
-
   bootstrap: [AppComponent],
 })
 export class AppModule {}
