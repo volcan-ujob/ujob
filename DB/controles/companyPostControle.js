@@ -17,9 +17,10 @@ exports.create_post = function (req, res) {
 };
 
 exports.display_one_post = function (req, res) {
-  Post.findOneById(req.params.postId, function (err, postId) {
+  console.log(req.params.postId)
+  Post.findById(req.params.postId, function (err, post) {
     if (err) res.send(err);
-    rs.json(postId);
+    res.json(post);
   });
 };
 

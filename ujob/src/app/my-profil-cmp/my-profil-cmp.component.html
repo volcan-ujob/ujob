@@ -13,6 +13,7 @@
       />
     </div>
 
-    <button type="submit" class="btn btn-primary" (click)="postClick()">Post</button>
+    <button type="submit" *ngIf="!check" class="btn btn-primary" (click)="postClick()">Post</button>
+    <button type="submit" *ngIf="check" class="btn btn-primary" (click)="putClick()">Update</button>
   </fieldset>
 </form>

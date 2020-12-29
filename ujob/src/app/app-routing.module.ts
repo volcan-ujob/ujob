@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'myprofile-user', component:MyProfilUserComponent},
   { path : "edit-profile-user", component: EditProfileUserComponent},
   {path : 'myprofile-cmp', component:MyProfilCmpComponent},
+  {path : 'myprofile-cmp/:id', component:MyProfilCmpComponent},
   {path: 'table-posts', component: TablePostsComponent}
 ];
 
