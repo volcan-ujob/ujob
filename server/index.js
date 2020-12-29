@@ -1,4 +1,5 @@
 const express = require("express");
+
 var bodyParser = require("body-parser");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -7,11 +8,12 @@ const cors = require("cors");
 const db = require("../DB/index");
 
 const app = express();
+
 const port = 3000;
 var passport = require("passport");
 var auth = require("./routers/auth.js");
 var profile = require("./routers/profile.js");
-// var profile = require("./routers/profile.js");
+
 const cookieSession = require("cookie-session");
 
 app.use(express.json());
@@ -71,7 +73,14 @@ passport.use(
 
     function (accessToken, refreshToken, profile, done) {
       console.log(profile);
-
+      var obj = new userModel({
+        googleId: profile.id,
+        firstName: profile.name.familyName,
+        lastName: profile.name.givenName,
+        username: profile.displayName,
+        email: " hello@gmail.com",
+        password: "hugjgrjr"
+      });
       userModel.findOne({ googleId: profile.id }).then((currentUser) => {
         if (currentUser) {
           console.log("user is: ", currentUser);

@@ -1,14 +1,12 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import {UserService} from '../services/user-service'
-import { NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service.service';
 @Component({
-  selector: 'app-my-profil-user',
-  templateUrl: './my-profil-user.component.html',
-  styleUrls: ['./my-profil-user.component.scss'],
+  selector: 'app-prof-user',
+  templateUrl: './prof-user.component.html',
+  styleUrls: ['./prof-user.component.scss'],
 })
-export class MyProfilUserComponent implements OnInit {
+export class ProfUserComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('user') || '{}');
   constructor(private _http: HttpClient, private userService: UserService) {}
 
