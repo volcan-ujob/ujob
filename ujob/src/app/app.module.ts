@@ -35,6 +35,10 @@ import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
     MyProfilUserComponent,
     EditProfileUserComponent,
     MyProfilCmpComponent,
+    LoginCmpComponent,
+    LoginUserComponent,
+    SigneUserComponent,
+    SigneCmpComponent
   ],
   imports: [
     BrowserModule,
