@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 
-var { userModel } = require("../models/userModel.js");
 
+var { userModel } = require("../models/userModel.js");
 
 // var selectOneUser = function (user, callback) {
 //   console.log("Yooo");
