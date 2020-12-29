@@ -18,7 +18,11 @@ export class SigneUserComponent implements OnInit {
     username: '',
     email: '',
     password: '',
+    googleId:''
   };
+  // getUserData = {
+  //   googleId: '',
+  // };
   constructor(private _auth: AuthService) {}
 
   ngOnInit(): void {}
@@ -29,4 +33,11 @@ export class SigneUserComponent implements OnInit {
       (err: any) => console.log(err)
     );
   }
+  // getUser() {
+  //   console.log(this.registerUserData);
+  //   this._auth.getUser(this.getUserData).subscribe(
+  //     (res: any) => console.log(res),
+  //     (err: any) => console.log(err)
+  //   );
+  // }
 }
