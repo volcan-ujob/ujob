@@ -38,7 +38,7 @@ import { TablePostsComponent } from './table-posts/table-posts.component';
     LoginCmpComponent,
     LoginUserComponent,
     SigneUserComponent,
-    SigneCmpComponent
+    SigneCmpComponent,
   ],
   imports: [
     BrowserModule,
