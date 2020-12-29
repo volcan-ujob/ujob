@@ -8,14 +8,35 @@ const cors = require("cors");
 const db = require("../DB/index");
 
 const app = express();
+
+// const mongoose = require("mongoose");
+
+// var Post = require("../DB/models/companyPostModel");
+
+// // Post= require('../../server/models/companyPostModel');
+
+// // mongoose.Promise = global.Promise;
+// mongoose.connect("marwenkhorchani:marwen@cluster0.scqq4.mongodb.net/ujob", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
+
+// var routePost = require("./routers/postCmp");
+// routePost(app);
+
+// require("./routers/postCmp")(app);
+
+// app.listen(PORT, () => {
+//   console.log("todo list RESTful API server started on: " + PORT);
+// });
+
 const port = 3000;
 var passport = require("passport");
 var auth = require("./routers/auth.js");
 
 var user = require("./routers/user");
-
+var post = require("./routers/postCmp");
 const cookieSession = require("cookie-session");
-
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -115,8 +136,8 @@ app.get(
   }
 );
 
-
 app.use("/", user);
+
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });

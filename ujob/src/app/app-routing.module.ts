@@ -12,8 +12,13 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
+import { TablePostsComponent } from './table-posts/table-posts.component';
 import { PaymeComponent } from './payme/payme.component';
+
 import { ProfUserComponent } from './prof-user/prof-user.component';
+
+
+
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login-cmp', component: LoginCmpComponent },
@@ -21,11 +26,14 @@ const routes: Routes = [
   { path: 'sign-user', component: SigneUserComponent },
   { path: 'sign-cmp', component: SigneCmpComponent },
   { path: '', component: FirstPageComponent },
+
   { path: 'profile-cmp', component: ProfileCmpComponent },
   { path: 'profile-user', component: ProfileUserComponent },
   { path: 'myprofile-user', component: MyProfilUserComponent },
   { path: 'edit-profile-user', component: EditProfileUserComponent },
   { path: 'myprofile-cmp', component: MyProfilCmpComponent },
+  { path: 'myprofile-cmp/:id', component: MyProfilCmpComponent },
+  { path: 'table-posts', component: TablePostsComponent },
   { path: 'payme', component: PaymeComponent },
   { path: "prof-user", component: ProfUserComponent}
 ];
@@ -47,5 +55,9 @@ export const routingComponents = [
   MyProfilUserComponent,
   EditProfileUserComponent,
   MyProfilCmpComponent,
-  ProfUserComponent
+
+  ProfUserComponent,
+
+  TablePostsComponent
+
 ];

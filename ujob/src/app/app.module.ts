@@ -12,8 +12,10 @@ import { SigneCmpComponent } from './signe-cmp/signe-cmp.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { ProfileCmpComponent } from './profile-cmp/profile-cmp.component';
-
 import { PaymeComponent } from './payme/payme.component';
+
+
+
 
 import { AuthService } from './auth.service';
 import {
@@ -25,7 +27,12 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { MyProfilUserComponent } from './my-profil-user/my-profil-user.component';
 import { EditProfileUserComponent } from './edit-profile-user/edit-profile-user.component';
 import { MyProfilCmpComponent } from './my-profil-cmp/my-profil-cmp.component';
+
 import { ProfUserComponent } from './prof-user/prof-user.component';
+
+
+
+import { TablePostsComponent } from './table-posts/table-posts.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +45,15 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
     EditProfileUserComponent,
     MyProfilCmpComponent,
 
+
     PaymeComponent,
     ProfUserComponent,
 
     LoginCmpComponent,
     LoginUserComponent,
     SigneUserComponent,
-    SigneCmpComponent
+    SigneCmpComponent,
+    TablePostsComponent
 
   ],
   imports: [
@@ -70,7 +79,6 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
       } as SocialAuthServiceConfig,
     },
   ],
-
   bootstrap: [AppComponent],
 })
 export class AppModule {}
