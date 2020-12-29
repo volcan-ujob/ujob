@@ -197,11 +197,18 @@
                 </div>
               </div>
               <div class="col-md-12 mb-3">
-                <p class="text-center">
-                  <a href="javascript:void();" class="google btn mybtn"
+                <!-- <p class="text-center">
+                  <a href="/auth/google" class="google btn mybtn"
                     ><i class="fa fa-google-plus"> </i> Signup using Google
                   </a>
-                </p>
+                </p> -->
+                <button
+                  (click)="getUser()"
+                  type="submit"
+                  class="btn btn-block mybtn btn-primary tx-tfm login"
+                >
+                  Sign Up with google
+                </button>
               </div>
             </form>
           </div>

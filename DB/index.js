@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 mongoose.connect(
   "mongodb+srv://marwenkhorchani:marwen@cluster0.scqq4.mongodb.net/ujob",
-  { useNewUrlParser: true, useUnifiedTopology: true }
+  { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
 );
 
 const db = mongoose.connection;

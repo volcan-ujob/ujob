@@ -35,6 +35,10 @@ import { TablePostsComponent } from './table-posts/table-posts.component';
     EditProfileUserComponent,
     MyProfilCmpComponent,
     TablePostsComponent,
+    LoginCmpComponent,
+    LoginUserComponent,
+    SigneUserComponent,
+    SigneCmpComponent
   ],
   imports: [
     BrowserModule,
