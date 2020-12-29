@@ -19,6 +19,7 @@ export class SigneUserComponent implements OnInit {
     job: '',
     email: '',
     password: '',
+
     image: '',
     phone: '',
     webSite: '',
@@ -53,7 +54,13 @@ export class SigneUserComponent implements OnInit {
     skill1: '',
     skill2: '',
     skill3: '',
+
+    googleId:''
+
   };
+  // getUserData = {
+  //   googleId: '',
+  // };
   constructor(private _auth: AuthService) {}
 
   ngOnInit(): void {}
@@ -64,4 +71,11 @@ export class SigneUserComponent implements OnInit {
       (err: any) => console.log(err)
     );
   }
+  // getUser() {
+  //   console.log(this.registerUserData);
+  //   this._auth.getUser(this.getUserData).subscribe(
+  //     (res: any) => console.log(res),
+  //     (err: any) => console.log(err)
+  //   );
+  // }
 }

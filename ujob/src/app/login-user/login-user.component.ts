@@ -33,6 +33,7 @@ export class LoginUserComponent implements OnInit {
           localStorage['login_status'] = '1';
           this.router.navigate(['/prof-user']);
         }
+        console.log(res);
       },
       (err: any) => console.log(err)
     );

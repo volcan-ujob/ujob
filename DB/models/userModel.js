@@ -15,15 +15,14 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String
-    // required: true
+    // required: true,
     // unique: true
   },
   password: {
-
     type: String,
     required: true
   },
-  job:String,
+  job: String,
   phone: String,
   image: String,
   webSite: String,
@@ -57,8 +56,11 @@ const userSchema = new mongoose.Schema({
   aboutProject2: String,
   skill1: String,
   skill2: String,
-  skill3: String
+  skill3: String,
 
+  googleId: {
+    type: String
+  }
 });
 
 var userModel = mongoose.model("user", userSchema);

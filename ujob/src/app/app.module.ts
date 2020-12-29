@@ -37,8 +37,15 @@ import { ProfUserComponent } from './prof-user/prof-user.component';
     MyProfilUserComponent,
     EditProfileUserComponent,
     MyProfilCmpComponent,
+
     PaymeComponent,
     ProfUserComponent,
+
+    LoginCmpComponent,
+    LoginUserComponent,
+    SigneUserComponent,
+    SigneCmpComponent
+
   ],
   imports: [
     BrowserModule,
