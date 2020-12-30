@@ -122,6 +122,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">First Name</label>
                 <input
+                  [(ngModel)]="registerUserData.firstName"
                   type="name"
                   name="First Name"
                   class="form-control"
@@ -133,6 +134,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Last Name</label>
                 <input
+                  [(ngModel)]="registerUserData.lastName"
                   type="name"
                   name="email"
                   class="form-control"
@@ -144,6 +146,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input
+                  [(ngModel)]="registerUserData.username"
                   type="name"
                   name="email"
                   class="form-control"
@@ -155,6 +158,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input
+                  [(ngModel)]="registerUserData.email"
                   type="email"
                   name="email"
                   class="form-control"
@@ -166,6 +170,7 @@
               <div class="form-group">
                 <label for="exampleInputEmail1">Password</label>
                 <input
+                  [(ngModel)]="registerUserData.password"
                   type="password"
                   name="password"
                   id="password"
@@ -174,16 +179,17 @@
                   placeholder="Enter Password"
                 />
               </div>
-              
+
               <div class="col-md-12 text-center">
                 <button
+                  (click)="registerUser()"
                   type="submit"
                   class="btn btn-block mybtn btn-primary tx-tfm login"
                 >
                   Sign Up
                 </button>
               </div>
-              
+
               <div class="col-md-12">
                 <div class="login-or">
                   <hr class="hr-or" />
@@ -192,12 +198,13 @@
               </div>
               <div class="col-md-12 mb-3">
                 <p class="text-center">
-                  <a href="javascript:void();" class="google btn mybtn"
+                  <a
+                    href="http://localhost:3000/auth/google"
+                    class="google btn mybtn"
                     ><i class="fa fa-google-plus"> </i> Signup using Google
                   </a>
                 </p>
               </div>
-
             </form>
           </div>
         </div>

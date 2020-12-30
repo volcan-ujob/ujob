@@ -9,33 +9,11 @@ const db = require("../DB/index");
 
 const app = express();
 
-// const mongoose = require("mongoose");
-
-// var Post = require("../DB/models/companyPostModel");
-
-// // Post= require('../../server/models/companyPostModel');
-
-// // mongoose.Promise = global.Promise;
-// mongoose.connect("marwenkhorchani:marwen@cluster0.scqq4.mongodb.net/ujob", {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true
-// });
-
-// var routePost = require("./routers/postCmp");
-// routePost(app);
-
-// require("./routers/postCmp")(app);
-
-// app.listen(PORT, () => {
-//   console.log("todo list RESTful API server started on: " + PORT);
-// });
-
 const port = 3000;
 var passport = require("passport");
 var auth = require("./routers/auth.js");
+var profile = require("./routers/profile.js");
 
-var user = require("./routers/user");
-var post = require("./routers/postCmp");
 const cookieSession = require("cookie-session");
 
 app.use(express.json());
@@ -69,6 +47,8 @@ app.use(passport.session());
 require("./routers/passportConfig")(passport);
 
 app.use("/auth", auth);
+app.use("/profile", profile);
+
 ////////////
 
 passport.serializeUser((user, done) => {
@@ -91,33 +71,77 @@ passport.use(
       callbackURL: "/auth/google/callback"
     },
 
-    function (accessToken, refreshToken, profile, cb) {
+    function (accessToken, refreshToken, profile, done) {
       console.log(profile);
-      var obj = new userModel({
-        googleId: profile.id,
-        firstName: profile.name.familyName,
-        lastName: profile.name.givenName,
-        username: profile.displayName,
-        email: " hello@gmail.com",
-        password: "hugjgrjr"
-      });
-      userModel.findOne({ googleId: profile.id }).then((currentUser) => {
-        if (currentUser) {
-          console.log("user is: ", currentUser);
-          done(null, currentUser);
-        } else {
-          new userModel({
-            username: profile.displayName,
-            googleId: profile.id,
-            firstName: profile.name.familyName,
-            lastName: profile.name.givenName
-          })
-            .save()
-            .then((newUser) => {
-              console.log("new user created: " + newUser);
+      passport.use(
+        new GoogleStrategy(
+          {
+            clientID:
+              "1045411814561-j7e9giknpj6b8a458kojr1foc2dnpame.apps.googleusercontent.com",
+            clientSecret: "vkgpSPqtFAewhsFc2xlz7trB",
+            callbackURL: "/auth/google/callback"
+          },
+
+          function (accessToken, refreshToken, profile, done) {
+            console.log(profile);
+
+            userModel.findOne({ googleId: profile.id }).then((currentUser) => {
+              if (currentUser) {
+                console.log("user is: ", currentUser);
+                done(null, currentUser);
+              } else {
+                new userModel({
+                  username: profile.displayName,
+                  googleId: profile.id,
+                  firstName: profile.name.familyName,
+                  lastName: profile.name.givenName,
+                  job: "",
+                  email: "",
+                  password: "",
+                  image: "",
+                  phone: "",
+                  webSite: "",
+                  github: "",
+                  twitter: "",
+                  diploma: "",
+                  School: "",
+                  dateSc: "",
+                  language1: "",
+                  language2: "",
+                  language3: "",
+                  interest1: "",
+                  interest2: "",
+                  interest3: "",
+                  careerProfile: "",
+                  experienceJob1: "",
+                  experiencePlace1: "",
+                  experienceDate1: "",
+                  experience1: "",
+                  experienceJob2: "",
+                  experiencePlace2: "",
+                  experienceDate2: "",
+                  experience2: "",
+                  experienceJob3: "",
+                  experiencePlace3: "",
+                  experienceDate3: "",
+                  experience3: "",
+                  project1: "",
+                  aboutProject1: "",
+                  project2: "",
+                  aboutProject2: "",
+                  skill1: "",
+                  skill2: "",
+                  skill3: ""
+                })
+                  .save()
+                  .then((newUser) => {
+                    console.log("new user created: " + newUser);
+                  });
+              }
             });
-        }
-      });
+          }
+        )
+      );
     }
   )
 );
@@ -130,13 +154,9 @@ app.get(
   "/auth/google/callback",
   passport.authenticate("google", { failureRedirect: "/login" }),
   function (req, res) {
-    res.send(req.user);
-    // Successful authentication, redirect home.
-    // res.redirect("/");
+    res.redirect(301, "http://localhost:4200/prof-user");
   }
 );
-
-app.use("/", user);
 
 app.listen(port, () => {
   console.log(`listening on ${port}`);
