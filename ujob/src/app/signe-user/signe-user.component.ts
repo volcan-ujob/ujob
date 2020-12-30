@@ -13,17 +13,50 @@ import { AuthService } from '../auth.service';
 })
 export class SigneUserComponent implements OnInit {
   registerUserData = {
-    firstName: '',
+    firstName: 'ghgh',
     lastName: '',
     username: '',
+    job: '',
     email: '',
     password: '',
-    googleId:''
+    googleId: '',
+    image: '',
+    phone: '',
+    webSite: '',
+    github: '',
+    twitter: '',
+    diploma: '',
+    School: '',
+    dateSc: '',
+    language1: '',
+    language2: '',
+    language3: '',
+    interest1: '',
+    interest2: '',
+    interest3: '',
+    careerProfile: '',
+    experienceJob1: '',
+    experiencePlace1: '',
+    experienceDate1: '',
+    experience1: '',
+    experienceJob2: '',
+    experiencePlace2: '',
+    experienceDate2: '',
+    experience2: '',
+    experienceJob3: '',
+    experiencePlace3: '',
+    experienceDate3: '',
+    experience3: '',
+    project1: '',
+    aboutProject1: '',
+    project2: '',
+    aboutProject2: '',
+    skill1: '',
+    skill2: '',
+    skill3: '',
   };
-  // getUserData = {
-  //   googleId: '',
-  // };
-  constructor(private _auth: AuthService) {}
+
+  constructor(private _auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {}
   registerUser() {
@@ -33,11 +66,4 @@ export class SigneUserComponent implements OnInit {
       (err: any) => console.log(err)
     );
   }
-  // getUser() {
-  //   console.log(this.registerUserData);
-  //   this._auth.getUser(this.getUserData).subscribe(
-  //     (res: any) => console.log(res),
-  //     (err: any) => console.log(err)
-  //   );
-  // }
 }

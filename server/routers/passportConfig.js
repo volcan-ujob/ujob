@@ -19,15 +19,16 @@ module.exports = function (passport) {
       });
     })
   );
-  passport.serializeUser((user, cb) => {
-    cb(null, user.id);
+
+  passport.serializeUser((user, done) => {
+    done(null, user.id);
   });
-  passport.deserializeUser((id, cb) => {
-    userModel.findOne({ _id: id }, (err, user) => {
+  passport.deserializeUser((id, done) => {
+    userModel.findById({ _id: id }, (err, user) => {
       const userInformation = {
         username: user.username
       };
-      cb(err, userInformation);
+      done(err, userInformation);
     });
   });
 };

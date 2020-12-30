@@ -124,7 +124,7 @@
                 <input
                   [(ngModel)]="registerUserData.firstName"
                   type="name"
-                  name="firstName"
+                  name="First Name"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
@@ -136,7 +136,7 @@
                 <input
                   [(ngModel)]="registerUserData.lastName"
                   type="name"
-                  name="lastName"
+                  name="email"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
@@ -148,7 +148,7 @@
                 <input
                   [(ngModel)]="registerUserData.username"
                   type="name"
-                  name="username"
+                  name="email"
                   class="form-control"
                   id="email"
                   aria-describedby="emailHelp"
@@ -197,18 +197,13 @@
                 </div>
               </div>
               <div class="col-md-12 mb-3">
-                <!-- <p class="text-center">
-                  <a href="/auth/google" class="google btn mybtn"
+                <p class="text-center">
+                  <a
+                    href="http://localhost:3000/auth/google"
+                    class="google btn mybtn"
                     ><i class="fa fa-google-plus"> </i> Signup using Google
                   </a>
-                </p> -->
-                <button
-                  (click)="getUser()"
-                  type="submit"
-                  class="btn btn-block mybtn btn-primary tx-tfm login"
-                >
-                  Sign Up with google
-                </button>
+                </p>
               </div>
             </form>
           </div>

@@ -29,8 +29,9 @@ export class LoginUserComponent implements OnInit {
     this._auth.loginUser(this.loginUserData).subscribe(
       (res: any) => {
         if (res.username !== null) {
+          localStorage.setItem('user', JSON.stringify(res));
           localStorage['login_status'] = '1';
-          this.router.navigate(['/home']);
+          this.router.navigate(['/prof-user']);
         }
         console.log(res);
       },
@@ -38,20 +39,3 @@ export class LoginUserComponent implements OnInit {
     );
   }
 }
-// onlogin() {
-//    else {
-//                  this.service.login(this.username, this.password).subscribe((res: any) => {
-//                    if (res.username !== null && res.role === 'manager') {
-//                              localStorage['login_status'] = '1';
-//                                localStorage['_id'] = res._id;
-//                                 this.router.navigate(['/navbar']);
-//                               } else if (res.role === 'register') {
-//                                        localStorage['login_status'] = '1';
-//                                          localStorage['_id'] = res._id;
-//                                            this.router.navigate(['/member']);
-//                                            } else if (res === null) {
-//                                                     alert('invaild email or password');
-//                                                    }
-//                                    });
-//           }
-//          }
