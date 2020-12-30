@@ -3,25 +3,25 @@ import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '../services/user.service.service';
 
-
-
 import { ActivatedRoute } from '@angular/router';
-import {Router} from '@angular/router'; 
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-my-profil-cmp',
   templateUrl: './my-profil-cmp.component.html',
   styleUrls: ['./my-profil-cmp.component.scss'],
 })
 export class MyProfilCmpComponent implements OnInit {
-
-
-  check:boolean=false;
-  id:any='';
+  check: boolean = false;
+  id: any = '';
   test: string = '';
   pathOrigine: string = 'http://localhost:3000/';
   user = JSON.parse(localStorage.getItem('user') || '{}');
-  constructor(private route:Router, private httpClient: HttpClient, private activatedRoute: ActivatedRoute ,private userService: UserService
-    ) {}
+  constructor(
+    private route: Router,
+    private httpClient: HttpClient,
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.getUserById();
@@ -31,16 +31,16 @@ export class MyProfilCmpComponent implements OnInit {
       }),
     };
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    if(this.id !== null){
-      this.check=true;
-       this.httpClient.get(this.pathOrigine+'posts/'+this.id, httpOptions)
-       .subscribe((res:any)=>{
-         if(res!==null){
-           this.test=res.details
-         }
-       })
+    if (this.id !== null) {
+      this.check = true;
+      this.httpClient
+        .get(this.pathOrigine + 'posts/' + this.id, httpOptions)
+        .subscribe((res: any) => {
+          if (res !== null) {
+            this.test = res.details;
+          }
+        });
     }
-    
   }
   getUserById() {
     var id = this.user._id;
@@ -62,7 +62,7 @@ export class MyProfilCmpComponent implements OnInit {
         this.route.navigate(['/table-posts/']);
       });
   }
-  putClick(){
+  putClick() {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -70,14 +70,15 @@ export class MyProfilCmpComponent implements OnInit {
     };
 
     this.httpClient
-      .put(this.pathOrigine + 'posts/'+this.id, { details: this.test }, httpOptions)
+      .put(
+        this.pathOrigine + 'posts/' + this.id,
+        { details: this.test },
+        httpOptions
+      )
       .subscribe((res: any) => {
         console.log(res);
-        alert('post updated')
+        alert('post updated');
         this.route.navigate(['/table-posts/']);
       });
-
-
   }
-
 }
