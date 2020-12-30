@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
 })
 export class SigneUserComponent implements OnInit {
   registerUserData = {
-    firstName: '',
+    firstName: 'ghgh',
     lastName: '',
     username: '',
     job: '',

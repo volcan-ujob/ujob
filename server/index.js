@@ -84,14 +84,7 @@ passport.use(
 
           function (accessToken, refreshToken, profile, done) {
             console.log(profile);
-            var obj = new userModel({
-              googleId: profile.id,
-              firstName: profile.name.familyName,
-              lastName: profile.name.givenName,
-              username: profile.displayName,
-              email: " hello@gmail.com",
-              password: "hugjgrjr"
-            });
+
             userModel.findOne({ googleId: profile.id }).then((currentUser) => {
               if (currentUser) {
                 console.log("user is: ", currentUser);
@@ -149,23 +142,6 @@ passport.use(
           }
         )
       );
-      userModel.findOne({ googleId: profile.id }).then((currentUser) => {
-        if (currentUser) {
-          console.log("user is: ", currentUser);
-          done(null, currentUser);
-        } else {
-          new userModel({
-            username: profile.displayName,
-            googleId: profile.id,
-            firstName: profile.name.familyName,
-            lastName: profile.name.givenName
-          })
-            .save()
-            .then((newUser) => {
-              console.log("new user created: " + newUser);
-            });
-        }
-      });
     }
   )
 );
