@@ -66,7 +66,4 @@ export class SigneUserComponent implements OnInit {
       (err: any) => console.log(err)
     );
   }
-  btnClick = () => {
-    this.router.navigateByUrl('/auth/google');
-  };
 }
